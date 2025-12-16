@@ -7,6 +7,7 @@ router = APIRouter(
     responses={404: {"description": "Not found"}},
 )
 
+
 @router.post("/")
 async def read_items(image: str):
     return gemini_api.generate_structured_recipes(image_url=image)
